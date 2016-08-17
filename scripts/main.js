@@ -1,6 +1,3 @@
-/**
- * Created by kameron on 16.08.2016.
- */
 var navigationPanels = document.getElementsByTagName('header');
 
 window.onscroll = function() {
