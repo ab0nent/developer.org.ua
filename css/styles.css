@@ -32,6 +32,13 @@ body {
     right: 0;
     z-index: 1000;
 }
+
+.nav__scrolled{
+    background: #454545;
+    opacity: 0.7;
+    transition: 1s;
+}
+
 .nav__link,
 .header__logo,
 .btn,
