@@ -113,10 +113,6 @@ body {
     text-decoration: underline;
 }
 
-.nav__link_active {
-    color: black;
-}
-
 .hood {
     width: 100%;
     background: url("../images/section_top_bg.jpg") center top;
