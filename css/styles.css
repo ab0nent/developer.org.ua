@@ -409,59 +409,53 @@ body {
     color: #ffffff;
     text-align: center;
 }
-.contact:after {
-    content: '';
-    clear: both;
-    display: block;
-}
+
 .contacts {
     text-align: left;
     float: left;
-    width: 33.333%;
 }
 
 h4 {
     color: #ffffff;
     font-weight: 700;
     font-size: 24px;
-    margin-top: 60px;
 }
 
 .contacts p,
 .contacts a {
     color: #999999;
+    margin-bottom: 25px;
+}
+
+.message-form{
+    float:right;
+    width: 66.66666%;
 }
 
 form {
     padding-top: 60px;
-    width: 66.66667%;
     text-align: left;
-    float: right;
 }
 
 form p {
     color: #ffffff;
     font-family: 'Open Sans', sans-serif;
     font-size: 26px;
-    float: left;
-    width: 48%;
-    margin-right: 2%;
 }
 
 input,
-textarea {
+ textarea {
     width: 100%;
-    background-color: #3b404c;
-    border: none;
-    border-bottom: 2px solid #7a7b7f;
-    color: #999999;
-    margin-bottom: 30px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-}
+     background-color: #3b404c;
+     border: none;
+     border-bottom: 2px solid #7a7b7f;
+     color: #999999;
+     margin-bottom: 30px;
+     font-family: 'Open Sans', sans-serif;
+     font-size: 20px;
+ }
 
 textarea {
-    width: 98%;
     height: 150px;
 }
 
