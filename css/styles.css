@@ -353,6 +353,7 @@ body {
     height: 430px;
     background-color: #f5f6f8;
     z-index: 4000;
+    user-select: none;
 }
 .portfolioDialogBox__Image{
     width: 90%;
@@ -368,6 +369,7 @@ body {
     cursor: pointer;
     top: 380px;
     line-height: 30px;
+
 }
 
 .portfolioDialogBox__buttonRight{

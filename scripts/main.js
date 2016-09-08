@@ -2,6 +2,7 @@ var navigationPanel = document.querySelector('.header');
 var portfolioList = document.querySelector('.portfolio__list');
 var portfolioMenu = document.querySelector('.pmenu__list');
 var portfolioImages = portfolioList.getElementsByTagName('img');
+var sectionAbout = document.getElementById('sectionAbout');
 var pImageCurrentIndex = 0;
 
 portfolioList.addEventListener("click", showPortfolio);
@@ -160,3 +161,5 @@ function enableScroll() {
     window.ontouchmove = null;
     document.onkeydown = null;
 }
+
+
