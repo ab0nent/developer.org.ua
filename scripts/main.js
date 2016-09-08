@@ -4,6 +4,9 @@ var portfolioMenu = document.querySelector('.pmenu__list');
 var portfolioImages = portfolioList.getElementsByTagName('img');
 var sectionAbout = document.getElementById('sectionAbout');
 var pImageCurrentIndex = 0;
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 portfolioList.addEventListener("click", showPortfolio);
 portfolioMenu.addEventListener("click", showPortfolio);
@@ -35,14 +38,14 @@ function showPortfolioDialogBox(target) {
     var pButtonLeft = document.createElement('div');
     var pButtonRight = document.createElement('div');
 
-    if(target.childNodes[1]===undefined){
+    if (target.childNodes[1] === undefined) {
         pImage.src = portfolioImages[0].src
-    }else{
+    } else {
         pImage.src = target.childNodes[1].src;
     }
 
-    for(pImageCurrentIndex = 0; pImageCurrentIndex < portfolioImages.length; pImageCurrentIndex++){
-        if(pImage.src.toLowerCase()==portfolioImages[pImageCurrentIndex].src.toLowerCase()){
+    for (pImageCurrentIndex = 0; pImageCurrentIndex < portfolioImages.length; pImageCurrentIndex++) {
+        if (pImage.src.toLowerCase() == portfolioImages[pImageCurrentIndex].src.toLowerCase()) {
             break;
         }
     }
@@ -58,47 +61,61 @@ function showPortfolioDialogBox(target) {
     portfolioDialogBox.appendChild(pButtonLeft);
     portfolioDialogBox.appendChild(pButtonRight);
 
-    pButtonLeft.addEventListener('click', function() { showPreviousPortfolioImage(pImage); } );
-    pButtonRight.addEventListener('click', function() { showNextPortfolioImage(pImage); } );
+    pButtonLeft.addEventListener('click', function () {
+        showPreviousPortfolioImage(pImage);
+    });
+    pButtonRight.addEventListener('click', function () {
+        showNextPortfolioImage(pImage);
+    });
+
+    var modalWindow = document.querySelector('.modalWindow');
+    var modalWindowCloseButton = modalWindow.querySelector('.modalWindow__closeButton');
+
+    modalWindow.addEventListener("click", removePortfolioDialogBox);
+    modalWindowCloseButton.addEventListener("click", removePortfolioDialogBox);
 
     document.body.appendChild(portfolioDialogBox);
 }
 
 function removePortfolioDialogBox() {
-    removeModalWindow();
-
     var portfolioDialogBox = document.querySelector('.portfolioDialogBox');
     var pButtonLeft = portfolioDialogBox.querySelector('.portfolioDialogBox__buttonLeft');
     var pButtonRight = portfolioDialogBox.querySelector('.portfolioDialogBox__buttonRight');
+    var modalWindow = document.querySelector('.modalWindow');
+    var modalWindowCloseButton = modalWindow.querySelector('.modalWindow__closeButton');
 
+    modalWindow.removeEventListener("click", removePortfolioDialogBox);
+    modalWindowCloseButton.removeEventListener("click", removePortfolioDialogBox);
     pButtonLeft.removeEventListener('click', showPreviousPortfolioImage);
     pButtonRight.removeEventListener('click', showNextPortfolioImage);
 
     document.body.removeChild(portfolioDialogBox);
+
+    removeModalWindow();
 }
 
-function showPreviousPortfolioImage(pImage){
+function showPreviousPortfolioImage(pImage) {
 
-    if(pImageCurrentIndex==0){
-        pImageCurrentIndex = portfolioImages.length -1;
-    }else{
+    if (pImageCurrentIndex == 0) {
+        pImageCurrentIndex = portfolioImages.length - 1;
+    } else {
         pImageCurrentIndex--;
     }
 
     pImage.src = portfolioImages[pImageCurrentIndex].src;
 }
 
-function showNextPortfolioImage(pImage){
-    if(pImageCurrentIndex == portfolioImages.length -1){
+function showNextPortfolioImage(pImage) {
+    if (pImageCurrentIndex == portfolioImages.length - 1) {
         pImageCurrentIndex = 0;
-    }else{
+    } else {
         pImageCurrentIndex++;
     }
 
     pImage.src = portfolioImages[pImageCurrentIndex].src;
 }
 
-function showModalWindow(){
+function showModalWindow() {
     var modalWindow = document.createElement('div');
     var modalWindowCloseButton = document.createElement('div');
 
@@ -106,29 +123,19 @@ function showModalWindow(){
     modalWindowCloseButton.className = "modalWindow__closeButton";
 
     modalWindow.appendChild(modalWindowCloseButton);
-    document.body.appendChild(modalWindow);
 
-    modalWindow.addEventListener("click", removePortfolioDialogBox);
-    modalWindowCloseButton.addEventListener("click", removePortfolioDialogBox);
+    document.body.appendChild(modalWindow);
 
     disableScroll();
 }
 
-function removeModalWindow(){
+function removeModalWindow() {
     var modalWindow = document.querySelector('.modalWindow');
-    var modalWindowCloseButton = document.querySelector('.modalWindow__closeButton');
-
-    modalWindow.removeEventListener("click", removePortfolioDialogBox);
-    modalWindowCloseButton.removeEventListener("click", removePortfolioDialogBox);
 
     document.body.removeChild(modalWindow);
 
     enableScroll();
 }
-
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
     e = e || window.event;
@@ -149,8 +156,8 @@ function disableScroll() {
         window.addEventListener('DOMMouseScroll', preventDefault, false);
     window.onwheel = preventDefault; // modern standard
     window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-    window.ontouchmove  = preventDefault; // mobile
-    document.onkeydown  = preventDefaultForScrollKeys;
+    window.ontouchmove = preventDefault; // mobile
+    document.onkeydown = preventDefaultForScrollKeys;
 }
 
 function enableScroll() {
@@ -162,4 +169,44 @@ function enableScroll() {
     document.onkeydown = null;
 }
 
+function showMessageWasSent() {
+    showModalWindow();
 
+    var fDialogBox = document.createElement('div');
+    fDialogBox.className = 'contact__dialogBox';
+
+    var fMessage = document.createElement('span');
+    fMessage.textContent = 'SEND MESSAGE form is under construction. ' +
+        'Please, contact us by phone or by email address. Sorry for inconvenience.';
+
+    var fButton = document.createElement('a');
+    fButton.className = 'btn';
+    fButton.style = 'margin-top:20px';
+    fButton.textContent = 'OK';
+
+    fDialogBox.appendChild(fMessage);
+    fDialogBox.appendChild(fButton);
+    document.body.appendChild(fDialogBox);
+
+    var modalWindow = document.querySelector('.modalWindow');
+    var modalWindowCloseButton = modalWindow.querySelector('.modalWindow__closeButton');
+
+    modalWindow.addEventListener("click", removeMessageWasSent);
+    modalWindowCloseButton.addEventListener("click", removeMessageWasSent);
+    fButton.addEventListener('click', removeMessageWasSent)
+}
+
+function removeMessageWasSent() {
+    var fDialogBox = document.querySelector('.contact__dialogBox');
+    var fButton = fDialogBox.querySelector('a');
+    var modalWindow = document.querySelector('.modalWindow');
+    var modalWindowCloseButton = modalWindow.querySelector('.modalWindow__closeButton');
+
+    modalWindow.removeEventListener("click", removeMessageWasSent);
+    modalWindowCloseButton.removeEventListener("click", removeMessageWasSent);
+    fButton.removeEventListener('click', removeMessageWasSent);
+
+    document.body.removeChild(fDialogBox);
+
+    removeModalWindow();
+}

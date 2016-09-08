@@ -358,6 +358,7 @@ body {
 .portfolioDialogBox__Image{
     width: 90%;
     margin-top: 5%;
+    user-select: none;
 }
 
 .portfolioDialogBox__buttonLeft,
@@ -369,7 +370,7 @@ body {
     cursor: pointer;
     top: 380px;
     line-height: 30px;
-
+    user-select: none;
 }
 
 .portfolioDialogBox__buttonRight{
@@ -557,6 +558,21 @@ input:focus,
 textarea:focus {
     outline: none;
     border-bottom: 2px solid #00a5ff;
+}
+
+.contact__dialogBox{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -250px;
+    width: 500px;
+    height: 200px;
+    background-color: #f5f6f8;
+    z-index: 4000;
+    user-select: none;
+    border-radius: 10px;
+    font-size: 22px;
 }
 
 footer {
