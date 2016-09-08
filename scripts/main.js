@@ -210,3 +210,4 @@ function removeMessageWasSent() {
 
     removeModalWindow();
 }
+
