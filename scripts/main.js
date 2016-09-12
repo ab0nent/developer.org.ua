@@ -2,7 +2,6 @@ var navigationPanel = document.querySelector('.header');
 var portfolioList = document.querySelector('.portfolio__list');
 var portfolioMenu = document.querySelector('.pmenu__list');
 var portfolioImages = portfolioList.getElementsByTagName('img');
-var sectionAbout = document.getElementById('sectionAbout');
 var pImageCurrentIndex = 0;
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -73,7 +72,7 @@ function showPortfolioDialogBox(target) {
 
     modalWindow.addEventListener("click", removePortfolioDialogBox);
     modalWindowCloseButton.addEventListener("click", removePortfolioDialogBox);
-
+    document.body.ch
     document.body.appendChild(portfolioDialogBox);
 }
 
@@ -210,4 +209,3 @@ function removeMessageWasSent() {
 
     removeModalWindow();
 }
-
