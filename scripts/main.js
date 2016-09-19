@@ -13,7 +13,7 @@ portfolioMenu.addEventListener("click", showPortfolio);
 window.onscroll = function () {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     scrolled ? navigationPanel.classList.add('nav__scrolled') : navigationPanel.classList.remove('nav__scrolled');
-}
+};
 
 function showPortfolio(event) {
     var target = event.target;

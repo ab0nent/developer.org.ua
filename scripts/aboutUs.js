@@ -10,7 +10,7 @@ var personsJSON = '[' +
     '"photo":"dd.jpg"},' +
     '{"name":"Daria Chekh",' +
     '"feedback":"The  content  flows very well and is well  written.",' +
-    '"photo":"dc.jpg"}]'
+    '"photo":"dc.jpg"}]';
 
 var persons = JSON.parse(personsJSON);
 
