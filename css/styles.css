@@ -111,7 +111,6 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-
 .nav__link:hover,
 .pmenu__link:hover {
     color: #00a5ff;
