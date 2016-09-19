@@ -490,6 +490,53 @@ body {
     background-color: #f5f6f8;
     padding-bottom: 80px;
 }
+
+.feedbackList{
+    list-style: none;
+}
+
+.feedbackList__item{
+    display: inline-block;
+    width: 33.333%;
+}
+
+.feedbackList__item:first-child,
+.feedbackList__item:last-child{
+    opacity: 0.5;
+}
+
+.feedbackList__item:first-child span ,
+.feedbackList__item:last-child  span{
+    display: none;
+}
+
+.feedbackList__item-photo{
+    margin: auto;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-position: center;
+}
+
+.feedbackList__item-photo:hover{
+    cursor: pointer;
+}
+
+.feedbackList__item-name{
+    display: block;
+    font-weight: bold;
+}
+
+.feedbackList__item-feedback{
+    display: block;
+    font-style: italic;
+}
+
+.feedbackList__item-feedback:after,
+.feedbackList__item-feedback:before{
+    content: '"';
+}
+
 .contact {
     background-color: #3b404c;
     padding-bottom: 100px;

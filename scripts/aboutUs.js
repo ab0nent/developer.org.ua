@@ -1,24 +1,63 @@
 var sectionAbout = document.getElementById('sectionAbout');
 
-var person1 = {
-    name:'Demchenko Dmytro',
-    feedback: 'lorem dfnklasgkjz alsdkgklsdjfgkl sdklfjgkldjsj dflskg lkdfdusdyyufasufgh',
-    photo:'images/dd.jpg'
+var personsJSON = '[' +
+
+    '{"name":"Oleksandr Demchenko",' +
+    '"feedback":"The load time of the page is quite  fast.",' +
+    '"photo":"od.jpg"},' +
+    '{"name":"Dmytro Demchenko",' +
+    '"feedback":"The design is very  professional and well done.",' +
+    '"photo":"dd.jpg"},' +
+    '{"name":"Daria Chekh",' +
+    '"feedback":"The  content  flows very well and is well  written.",' +
+    '"photo":"dc.jpg"}]'
+
+var persons = JSON.parse(personsJSON);
+
+var fl = document.createElement('ul');
+
+fl.classList = 'feedbackList';
+
+for(var i = 0; i < 3; i++){
+    var flItem = document.createElement('li');
+    flItem.className = 'feedbackList__item wow bounceIn';
+
+    var flPhoto = document.createElement('div');
+    flPhoto.className = 'feedbackList__item-photo';
+    flPhoto.style.backgroundImage = "url(images/" + persons[i]["photo"] + ")";
+
+    var flName = document.createElement('span');
+    flName.className = 'feedbackList__item-name';
+    flName.textContent = persons[i]["name"];
+
+    var flFeedback = document.createElement('span');
+    flFeedback.className = 'feedbackList__item-feedback';
+    flFeedback.textContent = persons[i]["feedback"];
+
+    flItem.appendChild(flPhoto);
+    flItem.appendChild(flName);
+    flItem.appendChild(flFeedback);
+
+    fl.appendChild(flItem);
 }
 
-var person2 = {
-    name:'Demchenko Dmytro',
-    feedback: 'lorem dfnklasgkjz alsdkgklsdjfgkl sdklfjgkldjsj dflskg lkdfdusdyyufasufgh',
-    photo:'images/dd.jpg'
+sectionAbout.appendChild(fl);
+
+sectionAbout.addEventListener("click", showFeedback);
+
+function showFeedback(event){
+    var target = event.target;
+    while (target != 'UL') {
+        if (target.parentNode.tagName == 'LI') {
+            setFeedback(target);
+            return;
+        }
+        target = target.parentNode;
+    }
 }
 
-var person3 = {
-    name:'Demchenko Dmytro',
-    feedback: 'lorem dfnklasgkjz alsdkgklsdjfgkl sdklfjgkldjsj dflskg lkdfdusdyyufasufgh',
-    photo:'images/dd.jpg'
+function setFeedback(target){
+    var tmp = fl.childNodes[1].innerHTML;
+    fl.childNodes[1].innerHTML = target.parentNode.innerHTML;
+    target.parentNode.innerHTML = tmp;
 }
-
-var persons = [person1, person2, person3];
-
-var a = JSON.stringify(persons)
-

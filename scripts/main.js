@@ -72,7 +72,6 @@ function showPortfolioDialogBox(target) {
 
     modalWindow.addEventListener("click", removePortfolioDialogBox);
     modalWindowCloseButton.addEventListener("click", removePortfolioDialogBox);
-    document.body.ch
     document.body.appendChild(portfolioDialogBox);
 }
 
@@ -209,3 +208,4 @@ function removeMessageWasSent() {
 
     removeModalWindow();
 }
+
