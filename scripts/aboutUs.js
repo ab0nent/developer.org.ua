@@ -57,7 +57,9 @@ function showFeedback(event){
 }
 
 function setFeedback(target){
-    var tmp = fl.childNodes[1].innerHTML;
-    fl.childNodes[1].innerHTML = target.parentNode.innerHTML;
-    target.parentNode.innerHTML = tmp;
+    var tmp1 = fl.childNodes[1].cloneNode(true);
+    var tmp2 = target.parentNode.cloneNode(true);
+
+    fl.replaceChild(tmp2, fl.childNodes[1]);
+    fl.replaceChild(tmp1, target.parentNode);
 }
