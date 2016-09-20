@@ -1,54 +1,56 @@
 var sectionAbout = document.getElementById('sectionAbout');
-
-var personsJSON = '[' +
-
-    '{"name":"Oleksandr Demchenko",' +
-    '"feedback":"The load time of the page is quite  fast.",' +
-    '"photo":"od.jpg"},' +
-    '{"name":"Dmytro Demchenko",' +
-    '"feedback":"The design is very  professional and well done.",' +
-    '"photo":"dd.jpg"},' +
-    '{"name":"Daria Chekh",' +
-    '"feedback":"The  content  flows very well and is well  written.",' +
-    '"photo":"dc.jpg"}]';
-
-var persons = JSON.parse(personsJSON);
-
+var persons = '';
 var fl = document.createElement('ul');
-
 fl.classList = 'feedbackList';
 
-for(var i = 0; i < 3; i++){
-    var flItem = document.createElement('li');
-    flItem.className = 'feedbackList__item wow bounceIn';
+var xhr = new XMLHttpRequest();
+var url = "data/feedbacks.json";
 
-    var flPhoto = document.createElement('div');
-    flPhoto.className = 'feedbackList__item-photo';
-    flPhoto.style.backgroundImage = "url(images/" + persons[i]["photo"] + ")";
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        persons = JSON.parse(this.responseText);
 
-    var flName = document.createElement('span');
-    flName.className = 'feedbackList__item-name';
-    flName.textContent = persons[i]["name"];
+        for(var i = 0; i < 3; i++){
+            var flItem = document.createElement('li');
+            flItem.className = 'feedbackList__item wow bounceIn';
 
-    var flFeedback = document.createElement('span');
-    flFeedback.className = 'feedbackList__item-feedback';
-    flFeedback.textContent = persons[i]["feedback"];
+            var flPhoto = document.createElement('img');
+            flPhoto.className = 'feedbackList__item-photo';
+            flPhoto.src = "images/" + persons[i]["photo"];
 
-    flItem.appendChild(flPhoto);
-    flItem.appendChild(flName);
-    flItem.appendChild(flFeedback);
+            var flName = document.createElement('span');
+            flName.className = 'feedbackList__item-name';
+            flName.textContent = persons[i]["name"];
 
-    fl.appendChild(flItem);
-}
+            var flFeedback = document.createElement('span');
+            flFeedback.className = 'feedbackList__item-feedback';
+            flFeedback.textContent = persons[i]["feedback"];
 
-sectionAbout.appendChild(fl);
+            flItem.appendChild(flPhoto);
+            flItem.appendChild(flName);
+            flItem.appendChild(flFeedback);
 
-sectionAbout.addEventListener("click", showFeedback);
+            fl.appendChild(flItem);
+        }
+
+        sectionAbout.appendChild(fl);
+
+        fl.addEventListener("click", showFeedback);
+    }
+};
+
+xhr.open("GET", url, true);
+xhr.send();
 
 function showFeedback(event){
     var target = event.target;
-    while (target != 'UL') {
-        if (target.parentNode.tagName == 'LI') {
+
+    while (target.tagName != 'UL') {
+        if (target.tagName == 'IMG') {
+
+            if(target.parentNode == target.parentNode.parentNode.childNodes[1]){
+                return;
+            }
             setFeedback(target);
             return;
         }

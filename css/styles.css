@@ -501,7 +501,7 @@ body {
 
 .feedbackList__item:first-child,
 .feedbackList__item:last-child{
-    opacity: 0.5;
+    cursor: pointer;
 }
 
 .feedbackList__item:first-child span ,
@@ -517,8 +517,8 @@ body {
     background-position: center;
 }
 
-.feedbackList__item-photo:hover{
-    cursor: pointer;
+.feedbackList__item-photo{
+
 }
 
 .feedbackList__item-name{
