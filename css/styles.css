@@ -499,8 +499,8 @@ body {
     width: 33.333%;
 }
 
-.feedbackList__item:first-child,
-.feedbackList__item:last-child{
+.feedbackList__item:first-child img,
+.feedbackList__item:last-child img{
     cursor: pointer;
 }
 
@@ -515,10 +515,6 @@ body {
     height: 90px;
     border-radius: 50%;
     background-position: center;
-}
-
-.feedbackList__item-photo{
-
 }
 
 .feedbackList__item-name{
