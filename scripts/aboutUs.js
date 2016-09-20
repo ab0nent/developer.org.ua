@@ -2,6 +2,7 @@ var sectionAbout = document.getElementById('sectionAbout');
 var persons = '';
 var fl = document.createElement('ul');
 fl.classList = 'feedbackList';
+
 var xhr = new XMLHttpRequest();
 var url = "data/feedbacks.json";
 
