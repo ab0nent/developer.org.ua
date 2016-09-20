@@ -652,3 +652,32 @@ footer span {
 .social__item a:hover {
     background: #00a5ff;
 }
+
+@media only screen and (max-width: 900px) {
+
+    .message-form {
+        float: left;
+        width: 100%;
+    }
+
+    .portfolio__item{
+        width: 50%;
+    }
+
+    .services__item{
+        width: 50%;
+        height: 240px;
+    }
+    .contacts {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contacts p {
+        font-size: 50px;
+    }
+
+    .header{
+        display: none;
+    }
+}
