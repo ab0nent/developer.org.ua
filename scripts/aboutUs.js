@@ -5,7 +5,7 @@ fl.classList = 'feedbackList';
 
 
 var xhr = new XMLHttpRequest();
-var url = "data/feedbacks.json";
+var url = "json/feedbacks.json";
 
 xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
