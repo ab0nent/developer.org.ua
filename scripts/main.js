@@ -29,7 +29,6 @@ function showPortfolio(event) {
 
 function showPortfolioDialogBox(target) {
     showModalWindow();
-
     var portfolioDialogBox = document.createElement('div');
     portfolioDialogBox.className = 'portfolioDialogBox';
 
