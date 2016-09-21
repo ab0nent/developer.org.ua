@@ -668,7 +668,11 @@ footer span {
     }
 
     .portfolio__item-signature{
-        font-size: 10px;
+        font-size: 12px;
+    }
+
+    .hood__header{
+        padding: 170px 0 30px 0;
     }
 
     .services__item{
