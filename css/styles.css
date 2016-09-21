@@ -665,6 +665,7 @@ footer span {
 
     .portfolio__item{
         width: 50%;
+        font-size: 12px;
     }
 
     .services__item{
@@ -674,10 +675,6 @@ footer span {
     .contacts {
         width: 100%;
         text-align: center;
-    }
-
-    .contacts p {
-        font-size: 30px;
     }
 
     .header{
