@@ -735,10 +735,6 @@ footer span {
         font-size: 15px;
     }
 
-    .modalWindow__closeButton{
-        display: none;
-    }
-
     .portfolioDialogBox{
         width: 300px;
         height: 300px;
@@ -758,5 +754,14 @@ footer span {
 
     .portfolioDialogBox__buttonRight{
         left: 185px;
+    }
+
+    .contact__dialogBox{
+        width: 300px;
+        margin-left: -150px;
+    }
+
+    .contact__dialogBox a{
+        width: 150px;
     }
 }
