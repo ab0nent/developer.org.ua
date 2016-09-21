@@ -665,7 +665,10 @@ footer span {
 
     .portfolio__item{
         width: 50%;
-        font-size: 12px;
+    }
+
+    .portfolio__item-signature{
+        font-size: 10px;
     }
 
     .services__item{
