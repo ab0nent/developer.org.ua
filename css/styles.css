@@ -656,7 +656,7 @@ footer span {
     background: #00a5ff;
 }
 
-@media only screen and (max-width: 900px) {
+@media (min-width: 750px) and (max-width: 970px)  {
 
     .message-form {
         float: left;
@@ -686,5 +686,47 @@ footer span {
 
     .header{
         display: none;
+    }
+}
+
+@media (max-width: 750px)  {
+
+    .message-form {
+        float: left;
+        width: 100%;
+    }
+
+    .portfolio__item{
+        width: 50%;
+    }
+
+    .portfolio__item-signature{
+        font-size: 10px;
+    }
+
+    .hood__header{
+        padding: 100px 0 30px 0;
+        font-size: 42px;
+    }
+
+    .services__item{
+        width: 50%;
+        height: 300px;
+    }
+    .contacts {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header{
+        display: none;
+    }
+
+    .btn{
+        width: 280px;
+    }
+
+    footer span{
+        font-size: 15px;
     }
 }
