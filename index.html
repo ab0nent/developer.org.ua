@@ -162,7 +162,7 @@
         <a name="contact"></a>
         <div class="main_width">
             <h2 class="sections__header">Contact Us</h2>
-            <form onsubmit="showMessageWasSent(); return false;" class="send-message">
+            <form onsubmit="sendEmail(); return false;" class="send-message">
                 <div class="contacts">
                     <h4>OUR ADDRESS</h4>
                     <p>Kyiv, Ukraine</p>
@@ -203,6 +203,12 @@
 <script src="scripts/wow.js"></script>
 <script>
     new WOW().init();
+</script>
+<script type="text/javascript" src="scripts/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("user_oE6k60b5J8pSmvBUDZ7QK");
+    })();
 </script>
 </body>
 </html>

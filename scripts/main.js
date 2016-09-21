@@ -166,19 +166,34 @@ function enableScroll() {
     document.onkeydown = null;
 }
 
+function sendEmail(){
+    var inputs = document.getElementsByTagName('input');
+    var email = inputs[0].value;
+    var subject = inputs[1].value;
+    var textArea = document.getElementsByTagName('textarea')[0];
+    var message = textArea.value;
+
+    emailjs.send("1","developer_org_ua",{"email": email,"subject": subject, "message": message});
+
+    inputs[0].value = "";
+    inputs[1].value = "";
+    textArea.value = "";
+
+    showMessageWasSent();
+}
+
+
 function showMessageWasSent() {
     showModalWindow();
 
     var fDialogBox = document.createElement('div');
-    fDialogBox.className = 'contact__dialogBox';
+    fDialogBox.classList.add('contact__dialogBox');
 
     var fMessage = document.createElement('span');
-    fMessage.textContent = 'SEND MESSAGE form is under construction. ' +
-        'Please, contact us by phone or by email address. Sorry for inconvenience.';
+    fMessage.textContent = 'MESSAGE WAS SENT';
 
     var fButton = document.createElement('a');
     fButton.className = 'btn';
-    fButton.style = 'margin-top:20px';
     fButton.textContent = 'OK';
 
     fDialogBox.appendChild(fMessage);

@@ -155,6 +155,7 @@ body {
     font-size: 25px;
     font-weight: 600;
     color: white;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -604,17 +605,23 @@ textarea:focus {
 
 .contact__dialogBox{
     position: fixed;
+    padding: 30px;
     top:50%;
     left: 50%;
-    margin-top: -250px;
-    margin-left: -250px;
-    width: 500px;
+    margin-top: -200px;
+    margin-left: -200px;
+    width: 400px;
     height: 200px;
     background-color: #f5f6f8;
     z-index: 4000;
     user-select: none;
-    border-radius: 10px;
+    border-radius: 50px;
     font-size: 22px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+.contact__dialogBox a{
+    margin-top: 30px;
 }
 
 footer {
