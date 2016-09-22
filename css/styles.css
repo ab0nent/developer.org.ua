@@ -9,7 +9,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-
 }
 
 .clear-fix {
@@ -181,7 +180,7 @@ body {
     width: 147px;
     height: 4px;
     background-color: #00a5ff;
-    margin: 30px auto 10px auto;
+    margin: 30px auto 10px;
 }
 
 .services {
@@ -190,7 +189,6 @@ body {
 
 .services__item {
     display: inline-block;
-    float: left;
     width: 25%;
     font-size: 12px;
     font-weight: 400;
@@ -278,7 +276,6 @@ body {
 
 .service__info {
     line-height: 15px;
-    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 300;
     padding: 0 10px;
@@ -295,7 +292,6 @@ body {
 }
 
 .pmenu__link {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
@@ -335,7 +331,6 @@ body {
 }
 
 .portfolio__item-signature {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
@@ -560,7 +555,7 @@ h4 {
     margin-bottom: 25px;
 }
 
-.message-form{
+.form__message{
     float:right;
     width: 66.66666%;
 }
@@ -572,7 +567,6 @@ form {
 
 form p {
     color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
     font-size: 26px;
 }
 
@@ -584,7 +578,6 @@ input,
      border-bottom: 2px solid #7a7b7f;
      color: #999999;
      margin-bottom: 30px;
-     font-family: 'Open Sans', sans-serif;
      font-size: 20px;
  }
 
@@ -594,7 +587,6 @@ textarea {
 
 input[type='submit'] {
     border: none;
-    font-family: 'Open Sans', sans-serif;
     margin-top: 30px;
 }
 
@@ -659,7 +651,7 @@ footer span {
 
 @media (min-width: 750px) and (max-width: 970px)  {
 
-    .message-form {
+    .form__message {
         float: left;
         width: 100%;
     }
@@ -695,7 +687,7 @@ footer span {
         line-height: 20px;
         font-size: 20px;
     }
-    .message-form {
+    .form__message {
         float: left;
         width: 100%;
     }
