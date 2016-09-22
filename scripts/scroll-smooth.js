@@ -6,10 +6,6 @@ initSmoothScrolling();
 function initSmoothScrolling() {
     var duration = 400;
 
-    //var pageUrl = location.hash ?
-    //    stripHash(location.href) :
-    //    location.href;
-
     delegatedLinkHijacking();
 
     function delegatedLinkHijacking() {
@@ -40,10 +36,6 @@ function initSmoothScrolling() {
         return '';
 
     }
-
-    //function stripHash(url) {
-    //    return url.slice(0, url.lastIndexOf('#'));
-    //}
 }
 
 function jump(target, options) {
@@ -83,7 +75,6 @@ function jump(target, options) {
         window.scrollTo(0, start + distance);
     }
 
-    // Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
     function easeInOutQuad(t, b, c, d) {
         t /= d / 2;
         if (t < 1) return c / 2 * t * t + b;

@@ -5,9 +5,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
-html {
-    scroll-behavior: smooth;
-}
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -665,21 +662,23 @@ footer {
 
 .nav__up{
     position: fixed;
-    bottom: 100px;
-    right: 10px;
-    display: none;
-    height: 50px;
-    width: 50px;
+    bottom: 102px;
+    right: 12px;
+    display: block;
+    height: 48px;
+    width: 48px;
     border-radius: 50%;
     background-color: #00a5ff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0;
+    transition: 1s;
 }
 
-.nav__up i{
-    font-size: 50px;
-    color: #fff;
+.nav__up-visible{
+    /*display: block;*/
+    opacity: 0.7;
+    transition: 1s;
 }
 
 @media (min-width: 750px) and (max-width: 970px)  {

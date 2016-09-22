@@ -13,8 +13,14 @@ portfolioMenu.addEventListener("click", showPortfolio);
 
 window.onscroll = function () {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    scrolled ? navigationPanel.classList.add('nav__scrolled') : navigationPanel.classList.remove('nav__scrolled');
-    scrolled ? navUp.style.display = 'block' : navUp.style.display = 'none';
+
+    if(scrolled){
+        navigationPanel.classList.add('nav__scrolled');
+        navUp.classList.add('nav__up-visible');
+    }else{
+        navigationPanel.classList.remove('nav__scrolled');
+        navUp.classList.remove('nav__up-visible');
+    }
 };
 
 function showPortfolio(event) {
