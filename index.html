@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Open+Sans:400,600,300|Lora:400,700'
           rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 <div class="wrapper">
+
     <header class="header">
         <nav class="nav main_width">
+
             <a href="/" class="header__logo"><span>WEB</span>MASTER</a>
             <ul class="nav__list">
                 <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
@@ -26,16 +29,14 @@
             </ul>
         </nav>
     </header>
-    <section class="hood">
+    <section class="hood" id="hood">
         <div class="main_width">
             <h1 class="hood__header wow fadeInDown"  data-wow-delay=".2s">YOUR IMAGINATION in WEB</h1>
             <h2 class="hood__subheader wow fadeInUp "  data-wow-delay=".3s">Fast, Responsive, Scalable WebSites</h2>
             <a class="btn wow fadeIn"  href="#contact"  data-wow-delay=".5s">Get Started Now</a>
         </div>
     </section>
-
-    <section class="services">
-        <a name="services"></a>
+    <section class="services" id="services">
         <div class="main_width">
             <h2 class="sections__header">OUR SERVICES</h2>
             <ul class="services__list">
@@ -86,8 +87,7 @@
             </ul>
         </div>
     </section>
-    <section class="portfolio">
-        <a name="portfolio"></a>
+    <section class="portfolio" id="portfolio">
         <div class="main_width">
             <h2 class="sections__header">PORTFOLIO</h2>
             <ul class="pmenu__list">
@@ -127,8 +127,7 @@
             <a class="btn" href="#contact">SHOW MORE</a>
         </div>
     </section>
-    <section class="recent">
-        <a name="recent"></a>
+    <section class="recent" id="recent">
         <div class="main_width">
             <h2 class="sections__header">RECENT BRANDS WE'VE WORKED WITH</h2>
             <ul class="recent__list">
@@ -153,15 +152,13 @@
             </ul>
         </div>
     </section>
-    <section class="about">
-        <a name="about"></a>
+    <section class="about" id="about">
         <div class="main_width">
             <h2 class="sections__header">SEE WHAT OTHERS ARE SAYING ABOUT US</h2>
             <div id="sectionAbout"></div>
         </div>
     </section>
-    <section class="contact">
-        <a name="contact"></a>
+    <section class="contact" id="contact">
         <div class="main_width">
             <h2 class="sections__header">CONTACT US</h2>
             <form onsubmit="sendEmail(); return false;">
@@ -198,7 +195,9 @@
                                             class="social__link"><i class="fa fa-google-plus"></i></a></li>
             </ul>
         </div>
+        <a href="#hood" class="nav__up"><i class="material-icons">keyboard_arrow_up</i></a>
     </footer>
+
 </div>
 <script src="scripts/main.js"></script>
 <script src="scripts/aboutUs.js"></script>
@@ -212,5 +211,7 @@
         emailjs.init("user_oE6k60b5J8pSmvBUDZ7QK");
     })();
 </script>
+<script type="text/javascript" src="scripts/scroll-smooth.js"></script>
+
 </body>
 </html>

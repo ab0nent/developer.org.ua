@@ -1,6 +1,7 @@
 var navigationPanel = document.querySelector('.header');
 var portfolioList = document.querySelector('.portfolio__list');
 var portfolioMenu = document.querySelector('.pmenu__list');
+var navUp = document.querySelector('.nav__up');
 var portfolioImages = portfolioList.getElementsByTagName('img');
 var pImageCurrentIndex = 0;
 // left: 37, up: 38, right: 39, down: 40,
@@ -10,12 +11,10 @@ var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 portfolioList.addEventListener("click", showPortfolio);
 portfolioMenu.addEventListener("click", showPortfolio);
 
-//var navPanel = document.getElementsByClassName('nav__list')[0];
-//navPanel.addEventListener("click", scrollTo);
-
 window.onscroll = function () {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     scrolled ? navigationPanel.classList.add('nav__scrolled') : navigationPanel.classList.remove('nav__scrolled');
+    scrolled ? navUp.style.display = 'block' : navUp.style.display = 'none';
 };
 
 function showPortfolio(event) {
@@ -225,17 +224,3 @@ function removeMessageWasSent() {
     removeModalWindow();
 }
 
-//function scrollTo(event) {
-//    var target = event.target;
-//
-//    while (target.tagName != 'UL') {
-//        if (target.tagName == 'A') {
-//            var hash = target.href;
-//            alert(hash);
-//            location.hash = target.href;
-//            return;
-//        }
-//        target = target.parentNode;
-//    }
-//
-//}
