@@ -78,13 +78,24 @@ body {
     text-align: right;
 }
 
+.social__list{
+    height: 90px;
+    display: table;
+    float: right;
+}
+
 .nav__item,
 .services__item,
 .pmenu__item,
 .portfolio__item,
-.recent__item,
-.social__item{
+.recent__item{
     display: inline-block;
+}
+
+.social__item{
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .pmenu__item:hover,
@@ -621,7 +632,7 @@ footer {
     position: relative;
 }
 
-footer span {
+.footer_logo {
     float: left;
     font-family: 'Open Sans', serif;
     font-size: 17px;
@@ -632,7 +643,7 @@ footer span {
 }
 
 .social__link {
-    margin-top: 25px;
+    /*margin-top: 25px;*/
     margin-left: 7px;
     display: block;
     color: #ffffff;
