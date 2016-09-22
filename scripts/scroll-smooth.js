@@ -4,16 +4,11 @@
 initSmoothScrolling();
 
 function initSmoothScrolling() {
-    //if (isCssSmoothSCrollSupported()) {
-    //    document.getElementById('css-support-msg').className = 'supported';
-    //    return;
-    //}
-
     var duration = 400;
 
-    var pageUrl = location.hash ?
-        stripHash(location.href) :
-        location.href;
+    //var pageUrl = location.hash ?
+    //    stripHash(location.href) :
+    //    location.href;
 
     delegatedLinkHijacking();
 
@@ -21,78 +16,43 @@ function initSmoothScrolling() {
         document.body.addEventListener('click', onClick, false);
 
         function onClick(e) {
-            if (!isInPageLink(e.target))
+            var linkHash = getLinkHash(e.target);
+            if (linkHash == '')
                 return;
 
             e.stopPropagation();
             e.preventDefault();
 
-            jump(e.target.hash, {
-                duration: duration,
-                callback: function() {
-                    //setFocus(e.target.hash);
-                }
+            jump(linkHash, {
+                duration: duration
             });
         }
     }
 
-    //function directLinkHijacking() {
-    //    [].slice.call(document.querySelectorAll('a'))
-    //        .filter(isInPageLink)
-    //        .forEach(function(a) {
-    //            a.addEventListener('click', onClick, false);
-    //        });
-    //
-    //    function onClick(e) {
-    //        e.stopPropagation();
-    //        e.preventDefault();
-    //
-    //        jump(e.target.hash, {
-    //            duration: duration
-    //        });
-    //    }
-    //
-    //}
+    function getLinkHash(target) {
 
-    function isInPageLink(n) {
-        return n.tagName.toLowerCase() === 'a' &&
-            n.hash.length > 0 &&
-            stripHash(n.href) === pageUrl;
+        while (target.tagName != 'BODY') {
+            if (target.tagName == 'A') {
+                return target.hash;
+            }
+            target = target.parentNode;
+        }
+        return '';
 
     }
 
-    function stripHash(url) {
-        return url.slice(0, url.lastIndexOf('#'));
-    }
-
-    //function isCssSmoothSCrollSupported() {
-    //    return 'scrollBehavior' in document.documentElement.style;
+    //function stripHash(url) {
+    //    return url.slice(0, url.lastIndexOf('#'));
     //}
-
-    // Adapted from:
-    // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
-    //function setFocus(hash) {
-    //
-    //    var element = document.getElementById(hash.substring(1));
-    //
-    //    if (element) {
-    //        //if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
-    //        //    element.tabIndex = -1;
-    //        //}
-    //
-    //        element.focus();
-    //    }
-    //}
-
 }
 
 function jump(target, options) {
+
     var
         start = window.pageYOffset,
         opt = {
             duration: options.duration,
             offset: options.offset || 0,
-            callback: options.callback,
             easing: options.easing || easeInOutQuad
         },
         distance = typeof target === 'string' ?
@@ -121,9 +81,6 @@ function jump(target, options) {
 
     function end() {
         window.scrollTo(0, start + distance);
-
-        if (typeof opt.callback === 'function')
-            opt.callback();
     }
 
     // Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
