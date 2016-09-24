@@ -1,6 +1,8 @@
 /**
  * Created by kameron on 22.09.2016.
  */
+var scrolledLinks = document.getElementsByClassName('scrolled');
+
 initSmoothScrolling();
 
 function initSmoothScrolling() {
@@ -9,7 +11,9 @@ function initSmoothScrolling() {
     delegatedLinkHijacking();
 
     function delegatedLinkHijacking() {
-        document.body.addEventListener('click', onClick, false);
+        for(var i = 0; i < scrolledLinks.length; i++){
+            scrolledLinks[i].addEventListener('click', onClick, false);
+        }
 
         function onClick(e) {
             var linkHash = getLinkHash(e.target);

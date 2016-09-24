@@ -674,6 +674,7 @@ footer {
     opacity: 0;
     transition: 1s;
 }
+.scrolled{}
 
 .nav__up-visible{
     cursor: pointer;
