@@ -85,7 +85,6 @@ body {
 }
 
 .nav__item,
-.services__item,
 .pmenu__item,
 .portfolio__item,
 .recent__item{
@@ -199,7 +198,8 @@ body {
 }
 
 .services__item {
-    display: inline-block;
+    display: block;
+    float: left;
     width: 25%;
     font-size: 12px;
     font-weight: 400;
