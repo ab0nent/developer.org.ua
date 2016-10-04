@@ -3,6 +3,7 @@ var portfolioList = document.querySelector('.portfolio__list');
 var portfolioMenu = document.querySelector('.pmenu__list');
 var navUp = document.querySelector('.nav__up');
 var portfolioImages = portfolioList.getElementsByTagName('img');
+var mobileMenuBtn = document.querySelector('.mobileMenu__btn');
 var pImageCurrentIndex = 0;
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -22,6 +23,13 @@ window.onscroll = function () {
         navUp.classList.remove('nav__up-visible');
     }
 };
+
+mobileMenuBtn.onclick = function(){
+    alert(1);
+    var mobileMenuList = document.querySelector('.mobileMenu__list');
+    mobileMenuList.classList.add('mobileMenu__list-visible');
+
+}
 
 function showPortfolio(event) {
     var target = event.target;
