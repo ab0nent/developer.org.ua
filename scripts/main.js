@@ -4,6 +4,7 @@ var portfolioMenu = document.querySelector('.pmenu__list');
 var navUp = document.querySelector('.nav__up');
 var portfolioImages = portfolioList.getElementsByTagName('img');
 var mobileMenuBtn = document.querySelector('.mobileMenu__btn');
+var mobileMenuList = document.querySelector('.mobileMenu__list');
 var pImageCurrentIndex = 0;
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -11,6 +12,7 @@ var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 portfolioList.addEventListener("click", showPortfolio);
 portfolioMenu.addEventListener("click", showPortfolio);
+mobileMenuList.addEventListener("click",hideMobileMenuList, true);
 
 window.onscroll = function () {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
@@ -25,10 +27,15 @@ window.onscroll = function () {
 };
 
 mobileMenuBtn.onclick = function(){
-    alert(1);
-    var mobileMenuList = document.querySelector('.mobileMenu__list');
-    mobileMenuList.classList.add('mobileMenu__list-visible');
+    if(mobileMenuList.classList.contains('mobileMenu__list-visible')){
+        mobileMenuList.classList.remove('mobileMenu__list-visible');
+    }else{
+        mobileMenuList.classList.add('mobileMenu__list-visible');
+    }
+}
 
+function hideMobileMenuList(){
+    mobileMenuList.classList.remove('mobileMenu__list-visible');
 }
 
 function showPortfolio(event) {

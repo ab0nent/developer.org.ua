@@ -40,7 +40,8 @@ position: fixed;
     background-color: #454545;
     cursor: pointer;
     display: none;
-    z-index: 1500;
+    z-index: 3000;
+    opacity: 0.9;
 }
 
 .mobileMenu__btn{
@@ -58,14 +59,6 @@ position: fixed;
 
 .mobileMenu__list-visible{
     display: block;
-}
-
-.mobileMenu__item{
-    border-bottom: 1px solid #00a5ff;
-}
-
-.mobileMenu__item:first-child{
-    border-top: 1px solid #00a5ff;
 }
 
 .mobileMenu__link{
@@ -729,6 +722,9 @@ footer {
 }
 
 @media (min-width: 750px) and (max-width: 970px)  {
+    .mobileMenu{
+        display: block;
+    }
 
     .form__message {
         float: left;
@@ -799,8 +795,8 @@ footer {
     }
 
     .mobileMenu{
-        display: block;
-    }
+         display: block;
+     }
 
     .btn{
         width: 280px;
